@@ -11,7 +11,7 @@ int exchange(int arr1[], int arr2[], int size){   //定义一个交换数值的函数//
 		arr2[i] = num;
 
 	}
-	return size;
+	return 0;
 }
 
 int main()
