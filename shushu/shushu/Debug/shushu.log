@@ -1,13 +1,13 @@
-﻿生成启动时间为 2019/9/22 22:25:14。
-     1>项目“E:\bit\shushu\shushu\shushu.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/10/7 16:12:39。
+     1>项目“C:\Users\ll\Desktop\LL\shushu\shushu\shushu.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          E:\新建文件夹\vcs\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "素数.c"
          素数.c
        Link:
-         E:\新建文件夹\vcs\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\bit\shushu\Debug\shushu.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\bit\shushu\Debug\shushu.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\bit\shushu\Debug\shushu.lib" /MACHINE:X86 "Debug\素数.obj"
-         shushu.vcxproj -> E:\bit\shushu\Debug\shushu.exe
-     1>已完成生成项目“E:\bit\shushu\shushu\shushu.vcxproj”(Build 个目标)的操作。
+         E:\新建文件夹\vcs\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ll\Desktop\LL\shushu\Debug\shushu.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ll\Desktop\LL\shushu\Debug\shushu.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ll\Desktop\LL\shushu\Debug\shushu.lib" /MACHINE:X86 "Debug\素数.obj"
+     1>LINK : fatal error LNK1201: 写入程序数据库“C:\Users\ll\Desktop\LL\shushu\Debug\shushu.pdb”时出错；请检查是否是磁盘空间不足、路径无效或权限不够
+     1>已完成生成项目“C:\Users\ll\Desktop\LL\shushu\shushu\shushu.vcxproj”(Build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:00.53
+已用时间 00:00:00.87

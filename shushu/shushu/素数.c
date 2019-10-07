@@ -11,7 +11,7 @@ int main(){
 		for (m = 2; m < n;m++)
 		if (n%m == 0)
 			break;
-		if (n>=m)
+		if (m>=n)
 		printf("%d\n", n);
 	}
 	
