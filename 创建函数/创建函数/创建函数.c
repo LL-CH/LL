@@ -21,7 +21,7 @@ void empty(int arr[], int size)
 	}
 	
 }
-void reverse(int a[], int size)
+void reverse(int arr[], int size)
 {
 	int i = 0;
 	int left = 0;
@@ -30,17 +30,17 @@ void reverse(int a[], int size)
 	{
 		while (left < right)
 		{
-			int tmp = a[left];
-			a[left] = a[right];
-			a[right] = tmp;
+			int tmp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = tmp;
 			left++;
 			right--;
 		}
-		printf("%d ", a[i]);
+		printf("%2d", arr[i]);
 	}
 }
 int main(){
-	int arr[5] = {1,5,8,9,7};
+	int arr[5] = { 1 , 5 , 8 , 9 , 7 };
 	int size = sizeof(arr) / sizeof(arr[0]);
 	printf("ÄæÖÃÊý×é:\n");
 	reverse(arr, size);
