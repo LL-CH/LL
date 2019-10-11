@@ -13,6 +13,7 @@ int main()
 			printf("*");
 		}
 		printf("\n");
+		printf("\n");
 	}
 	for (i = 6; i > 0; i--)
 	{
@@ -22,8 +23,29 @@ int main()
 			printf("*");
 		}
 		printf("\n");
+		printf("\n");
 	}
 
+
+	int i;
+	int max;
+	scanf("%d", &max);
+	for (i = 1; i <= max; i++){
+		int j;
+		for (j = 1; j <= 2 * i - 1; j++){
+			printf(" ");
+		}
+		printf("\n");
+
+	}
+	for (i = 1; i <= max; i++){
+		int j;
+		for (j = 1; j <= 2 *(max- i) - 1; j++){
+			printf(" ");
+		}
+		printf("\n");
+
+	}
 	system("pause");
 	return 0;
 }

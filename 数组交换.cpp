@@ -5,10 +5,10 @@ int exchange(int arr1[], int arr2[], int size){   //定义一个交换数值的函数//
 	int i = 0;
 
 	for (i = 0; i <= size; i++){
-
-		int num = arr1[i];
-		arr1[i] = arr2[i];
-		arr2[i] = num;
+		                        //加减法                      //异或法
+		int num = arr1[i];     //arr1[i] = arr1[i]+arr2[i];   //arr1[i] = arr1[i]^arr2[i];
+		arr1[i] = arr2[i];     //arr2[i] = arr1[i]-arr2[i];   //arr1[i] = arr1[i]^arr2[i];
+		arr2[i] = num;         //arr1[i] = arr1[i]-arr2[i];   //arr1[i] = arr1[i]^arr2[i];
 
 	}
 	return 0;
