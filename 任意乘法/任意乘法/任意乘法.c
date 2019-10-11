@@ -11,7 +11,7 @@ void mul(i){
 		{
 			if (m > n)
 				break;
-			printf("%d*%d=%-2d", n,m,n*m);
+			printf("%d*%d=%-4d", n,m,n*m);
 		}
 		printf("\n");
 	}
