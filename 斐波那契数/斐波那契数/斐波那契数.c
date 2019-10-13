@@ -1,7 +1,4 @@
-
-//#include <stdio.h>
-//#include <stdlib.h>
-
+//∑«µ›πÈ µœ÷
 #include <stdio.h>
 #include <stdlib.h>
 int fib(int n){
