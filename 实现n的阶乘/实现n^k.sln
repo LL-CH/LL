@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "实现n^k", "实现n^k\实现n^k.vcxproj", "{C8EF9047-4D5F-43CF-BC56-F941D70DD5DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8EF9047-4D5F-43CF-BC56-F941D70DD5DC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C8EF9047-4D5F-43CF-BC56-F941D70DD5DC}.Debug|Win32.Build.0 = Debug|Win32
+		{C8EF9047-4D5F-43CF-BC56-F941D70DD5DC}.Release|Win32.ActiveCfg = Release|Win32
+		{C8EF9047-4D5F-43CF-BC56-F941D70DD5DC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
