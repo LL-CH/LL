@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 int bin_search(int arr[], int left, int right, int num){
@@ -19,8 +20,12 @@ int bin_search(int arr[], int left, int right, int num){
 int main()
 {
 	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	
-	int result = bin_search(arr,0,9,4 );
+	int left = 0;
+	int right = (sizeof(arr) / sizeof(arr[0])) - 1;
+	int num = 0;
+	printf("ÊäÈë²éÕÒÊı×Ö:\n");
+	scanf("%d", &num);
+	int result = bin_search(arr,left,right,num );
 	printf("result=%d\n", result);
 	system("pause");
 }
