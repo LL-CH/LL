@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-void mul(i){
+int mul(int i){
 	printf(" ‰»Î–– ˝£∫\n");
 	scanf("%d", &i);
 	int n, m;
@@ -14,7 +14,7 @@ void mul(i){
 			printf("%d*%d=%-4d", n,m,n*m);
 		}
 		printf("\n");
-	}
+	}return 0;
 }
 	int main() {
 
