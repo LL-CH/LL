@@ -8,7 +8,7 @@ int prime_number(int n){
 		printf("%d不是素数\n");
 	}
 	else {
-		for (m = 2; m < n; m++){
+		for (m = 2; m < n; m++){  //m<=sqrt(n)   n的开方数
 			if (n%m == 0){
 				break;
 			}
