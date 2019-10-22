@@ -2,10 +2,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <time.h>
-
+//定义格子数
 #define MAX_ROW 9
 #define MAX_COL 9
 
+// 定义地雷数量
 #define MINE_COUNT 10
 
 //定义雷区地图
@@ -43,16 +44,39 @@ void init(){
 	}
 }
 
+//打印表面的地图样式
 void printshow_map(char the_map[MAX_ROW][MAX_COL]){
 	for (int row = 0; row < MAX_ROW; row++){
 		for (int col = 0; col < MAX_COL; col++){
-			printf("%c", the_map[row][col]);
+			printf(" %c ", the_map[row][col]);
 		}
 		printf("\n");
 	}
 }
 
+//判断所翻开的位置周围的雷数并表示在地图上
+void mine_count_map(char mine_board[MAX_ROW][MAX_COL],char show_board[MAX_ROW][MAX_COL],
+					int row,int col){
+	int count = 0;
+	for (int r = row - 1; r <= row + 1; r++){
+		for (int c = col - 1; c <= col + 1; c++){
+			if (r == row && c == col){
+				continue;
+			}
+			//超出边界时
+			if (row<0 || row>=MAX_ROW || col<0 || col>=MAX_COL){
+				continue;
+			}
+			if (mine_board[r][c] == '1'){
+				count++;
+			}
+		}
+	}
+	show_board[row][col] = '0'+ count;
+}
+
 int main(){
+	int count =0;
 	//雷区地图初始化
 	init();
 	while (1){
@@ -64,7 +88,7 @@ int main(){
 		int col = 0;
 		scanf("%d %d", &row, &col);
 		//判断是否超出界限
-		if (row<0 || row>MAX_ROW || col<0 || col>MAX_COL){
+		if (row<0 || row>=MAX_ROW || col<0 || col>=MAX_COL){
 			printf("你的输入有误!请重新输入:");
 			continue;
 		}
@@ -75,12 +99,20 @@ int main(){
 		}
 		//判断是否踩雷
 		if (mine_board[row][col] == '1'){
-			printf("游戏结束!\n");
 			printshow_map(mine_board);
+			printf("游戏结束!\n");
 			break;
 		}
 		//判断游戏是否胜利
+		++count;
+		if (count ==( MAX_ROW*MAX_COL) - MINE_COUNT){
+			printshow_map(mine_board);
+			printf("你赢了!");
+			break;
+		}
+
 		//显示玩家翻牌周围的雷数并打印表面地图
+		mine_count_map(mine_board,show_board,row,col);
 	}
 		system("pause");
 
