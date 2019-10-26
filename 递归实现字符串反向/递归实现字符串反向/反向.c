@@ -10,7 +10,7 @@ void reverse_string(char * string){
 int main(){	
 	char arr[]= "18522354";
 	
-	  reverse_string(arr);
+	reverse_string(arr);
 	printf("\n" );
 	system("pause");
 }
