@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int count_one_bits(unsigned int value)
+int count_one_bits(unsigned int value)   //无符号变量
 {
 	int count = 0;
 	while (value)
@@ -13,8 +13,9 @@ int count_one_bits(unsigned int value)
 		}
 		value /= 2;                //减掉所得的一个1
 	}return count;
-}
-	/*int count = 0;
+}//下方代码适用于有符号变量
+int count_bit(int value){
+	int count = 0;
 	
 	for (int i = 0; i < 32; i++){
 		if (((value >> i) & 1) == 1){
@@ -22,8 +23,17 @@ int count_one_bits(unsigned int value)
 		}
 	}
 		return count;
-	}*/
+}
 
+
+//或者
+int count_bit2(int n){
+	int count = 0;
+	while (n){
+		n = n&(n - 1);
+			count++;
+	}
+}
 
 int main()
 {
@@ -37,6 +47,10 @@ int main()
 			count++;
 		}
 	}*/
+	int count1 = count_bit(num);
+	int count2=count_bit2(num);
+	printf("二进制序列中1的个数count = %d\n", count1);
+	printf("二进制序列中1的个数count = %d\n", count2);
 	printf("二进制序列中1的个数count = %d\n", count);
 	system("pause");
 	return 0;
