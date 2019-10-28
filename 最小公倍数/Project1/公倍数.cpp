@@ -11,7 +11,11 @@ int main(){
 			printf("%d\n", i);
 			break;
 		}
-		
+		//·½·¨¶þ
+		while ((A*i) % B != 0){
+			i++;
+		}
+		printf("%d\n", A*i);
 	}
 	system("pause");
 	return 0;
