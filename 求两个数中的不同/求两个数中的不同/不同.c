@@ -1,20 +1,18 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 
-int count_one_bits(unsigned int value)
+int count_one_bits( int value)         // 取数字的二进制序列中的 1的个数
 {
 	int count = 0;
-	while (value)
-	{
-		if (value % 2 == 1)        // 取数字的二进制序列中的一个 1 
-		{
+
+	for (int i = 0; i < 32; i++){
+		if (((value >> i) & 1) == 1){
 			count++;
 		}
-		value /= 2;                //减掉所得的一个1
 	}
 	return count;
 }
+
 int main()
 {
 	int a = 1999;
