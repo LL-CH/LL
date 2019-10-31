@@ -10,14 +10,17 @@ void main(){
 
 		switch (c)
 		{
-		case '+':printf("%f%c%f=%f\n", a, c, b, a + b);
+		case '+':
+			printf("%f%c%f=%f\n", a, c, b, a + b);
 			break;
-		case'-':printf("%f%c%f=%f\n", a, c, b, a - b);
+		case'-':
+			printf("%f%c%f=%f\n", a, c, b, a - b);
 			break;
-		case'*':printf("%f%c%f=%f\n", a, c, b, a * b);
+		case'*':
+			printf("%f%c%f=%f\n", a, c, b, a * b);
 			break;
 		case'/':
-			//除法分母 不能为0
+			//除法的分母 不能为0
 			if (b == 0){
 				printf("输入错误!请从新输入!\n");
 				break;
@@ -26,7 +29,8 @@ void main(){
 				printf("%f%c%f=%f\n", a, c, b, a / b);
 				break;
 			}
-		default:printf("输入错误!\n");
+		default:
+			printf("输入错误!\n");
 
 		
 	}
