@@ -28,3 +28,19 @@ void Triangle(int arr[N][N])          //将三角形的表示用二维数组代替
 		system("pause");
 		return 0;
 	}
+
+	//动态二维数组的建立
+	/*
+	#include
+	int row;
+	sacnf("%d", &row);
+	int** arr = (int**)malloc(sizeof(int*) * row);
+	for (int i = 0; i < row; i++){
+		arr[i] = (int*)malloc(sizeof(int)* (i - 1));
+	}*/
+	//释放
+	/*for (int i = 0; i < row; i++){
+		free(arr[i]);
+	}
+	free(arr);
+	*/
