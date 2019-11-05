@@ -7,10 +7,13 @@
 int find(int arr[ROW][COL], int n){
 	int row = 0;
 	int col = COL - 1;
+	//从右上角的数字开始找
 	while (1){
+		//大了,进入下一行
 		if (arr[row][col] < n){
 			row++;
 		}
+		//小了,回到上一列
 		if (arr[row][col] > n){
 			col--;
 		}

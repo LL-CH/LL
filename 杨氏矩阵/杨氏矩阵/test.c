@@ -5,7 +5,7 @@
 #define COL 3
 
 int find(int arr[ROW][COL], int n){
-
+	//直接将数组中的所有元素找一遍
 		for (int row = 0; row < ROW; row++){
 			for (int col = 0; col < COL; col++){
 				if (arr[row][col] == n){
