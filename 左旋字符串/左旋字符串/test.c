@@ -21,7 +21,7 @@ void left_handed(char* str,int k,int len){
 
 int main(){
 	char str[] = "ABCDE";
-	printf("旋转前:%s\n", str);
+	printf("旋转前:%s\n", str); 
 	int k=0;
 	int len = strlen(str);
 	printf("输入逆转数:");
