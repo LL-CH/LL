@@ -18,6 +18,24 @@ void left_handed(char* str,int k,int len){
 	}
 }
 
+void reverse(char* left, char* right){
+	while (left < right){
+		char tmp = *right;
+		*right = *left;
+		*left = tmp;
+		++left;
+		--right;
+	}
+}
+
+//字符串左旋
+void Left_rotate(char* str, int k){
+	int len = strlen(str);
+	k %= len;
+	reverse(str, str + k - 1);
+	reverse(str + k, str + len - 1);
+	reverse(str, str + len - 1);
+}
 
 int main(){
 	char str[] = "ABCDE";
@@ -27,6 +45,8 @@ int main(){
 	printf("输入逆转数:");
 	scanf("%d", &k);
 	left_handed(str, k, len);
+	printf("旋转后:%s\n", str);
+	Left_rotate(str, k, len);
 	printf("旋转后:%s\n", str);
 	system("pause");
 	return 0;
