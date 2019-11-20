@@ -5,7 +5,7 @@
 #include "contact.h"
 
 //1.初始化
-void Initi(pcontact pc){
+void Init(pcontact pc){
 	pc->size = 0;
 }
 //2. 添加联系人信息
@@ -31,21 +31,83 @@ void Add(pcontact pc){
 	}
 
 }
+
+int Find(pcontact pc, char* name){
+	for (int i = 0; i < pc->size; i++){
+		if (strcmp(pc->date[i].name , name)==0)
+		{
+			return i;
+		}
+	}
+	return 0;
+}
+
 //3. 删除指定联系人信息
 void Delete(pcontact pc){
-
+	char name[NAME_MAX];
+	printf("输入要删除的名字!\n");
+	scanf("%s", name);
+	int pos = Find(pc, name);
+	if (pos == 0){
+		printf("此人不存在,删除失败!\n");
+		return;
+	}
+	for (int i = pos; i < pc->size - 1; i++){
+		pc->date[i] = pc->date[i - 1];
+	}
+	pc->size--;
+	printf("删除成功!\n");
 }
 //4. 查找指定联系人信息
-void Find(pcontact pc){
-
+void Sear(pcontact pc){
+	char name[NAME_MAX];
+	printf("输入要查找的名字!\n");
+	scanf("%s", name);
+	int pos = Find(pc, name);
+	if (pos == 0){
+		printf("此人不存在,查找失败!\n");
+		return;
+	}
+	printf("===============================\n");
+	printf("姓名:%s\n", pc->date[pos].name);
+	printf("性别:%s\n", pc->date[pos].gender);
+	printf("年龄:%d\n",& pc->date[pos].age);
+	printf("电话:%s\n", pc->date[pos].tele);
+	printf("地址:%s\n", pc->date[pos].addr);
+	printf("===============================\n");
 }
 //5. 修改指定联系人信息
 void Modify(pcontact pc){
-
+	char name[NAME_MAX];
+	printf("输入要修改的名字!\n");
+	scanf("%s", name);
+	int pos = Find(pc, name);
+	if (pos == 0){
+		printf("此人不存在,修改失败!\n");
+		return;
+	}
+	printf("请输入姓名:\n");
+	scanf("%s", pc->date[pos].name);
+	printf("请输入性别:\n");
+	scanf("%s", pc->date[pos].gender);
+	printf("请输入年龄:\n");
+	scanf("%d", &pc->date[pos].age);
+	printf("请输入电话:\n");
+	scanf("%s", pc->date[pos].tele);
+	printf("请输入地址:\n");
+	scanf("%s", pc->date[pos].addr);
 }
 //6. 显示所有联系人信息
 void Show(pcontact pc){
-
+	for (int i = 0; i < pc->size; i++){
+		printf("===========第%d个人============\n",i);
+		printf("姓名:%s\n", pc->date[i].name);
+		printf("性别:%s\n", pc->date[i].gender);
+		printf("年龄:%d\n", &pc->date[i].age);
+		printf("电话:%s\n", pc->date[i].tele);
+		printf("地址:%s\n", pc->date[i].addr);
+		printf("===============================\n");
+	}
 }
 //7. 清空所有联系人
 void Empty(pcontact pc){
@@ -64,8 +126,3 @@ void Load(pcontact pc){
 
 }
 
-int main(){
-
-	system("pause");
-	return 0;
-}

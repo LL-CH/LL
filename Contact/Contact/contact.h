@@ -21,13 +21,13 @@ typedef struct contact{
 }contact,*pcontact;
 
 //1.初始化
-void Initi(pcontact pc);
+void Init(pcontact pc);
 //2. 添加联系人信息
 void Add(pcontact pc);
 //3. 删除指定联系人信息
 void Delete(pcontact pc);
 //4. 查找指定联系人信息
-void Find(pcontact pc);
+void Sear(pcontact pc);
 //5. 修改指定联系人信息
 void Modify(pcontact pc);
 //6. 显示所有联系人信息
