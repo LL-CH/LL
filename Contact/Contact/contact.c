@@ -7,11 +7,25 @@
 //1.初始化
 void Init(pcontact pc){
 	pc->size = 0;
+	pc->data = (info*)malloc(sizeof(info*)*DEFAULT);
+	pc->capacity = DEFAULT;
 }
+
+//检查空间
+int cheak_capacity(pcontact pc){
+	if (pc->size == pc->capacity){
+	pc->data = (info*)realloc(pc->data,sizeof(info*)* pc->capacity + 10);
+	if (pc->data == NULL){
+		return 0;
+		}
+	}
+	return 1;
+}
+
 //2. 添加联系人信息
 void Add(pcontact pc){
 	info curinfo;
-	if (pc->size == MAX){
+	if (cheak_capacity(pc->capacity)==0){
 		printf("通讯录已满!添加失败!\n");
 		return;
 	}
@@ -26,7 +40,7 @@ void Add(pcontact pc){
 		scanf("%s", curinfo.tele);
 		printf("请输入地址:\n");
 		scanf("%s", curinfo.addr);
-		pc->date[pc->size] = curinfo;
+		pc->data[pc->size] = curinfo;
 		pc->size++;
 	}
 
@@ -34,7 +48,7 @@ void Add(pcontact pc){
 
 int Find(pcontact pc, char* name){
 	for (int i = 0; i < pc->size; i++){
-		if (strcmp(pc->date[i].name , name)==0)
+		if (strcmp(pc->data[i].name , name)==0)
 		{
 			return i;
 		}
@@ -53,7 +67,7 @@ void Delete(pcontact pc){
 		return;
 	}
 	for (int i = pos; i < pc->size - 1; i++){
-		pc->date[i] = pc->date[i - 1];
+		pc->data[i] = pc->data[i - 1];
 	}
 	pc->size--;
 	printf("删除成功!\n");
@@ -69,11 +83,11 @@ void Sear(pcontact pc){
 		return;
 	}
 	printf("===============================\n");
-	printf("姓名:%s\n", pc->date[pos].name);
-	printf("性别:%s\n", pc->date[pos].gender);
-	printf("年龄:%d\n",& pc->date[pos].age);
-	printf("电话:%s\n", pc->date[pos].tele);
-	printf("地址:%s\n", pc->date[pos].addr);
+	printf("姓名:%s\n", pc->data[pos].name);
+	printf("性别:%s\n", pc->data[pos].gender);
+	printf("年龄:%d\n",& pc->data[pos].age);
+	printf("电话:%s\n", pc->data[pos].tele);
+	printf("地址:%s\n", pc->data[pos].addr);
 	printf("===============================\n");
 }
 //5. 修改指定联系人信息
@@ -87,35 +101,43 @@ void Modify(pcontact pc){
 		return;
 	}
 	printf("请输入姓名:\n");
-	scanf("%s", pc->date[pos].name);
+	scanf("%s", pc->data[pos].name);
 	printf("请输入性别:\n");
-	scanf("%s", pc->date[pos].gender);
+	scanf("%s", pc->data[pos].gender);
 	printf("请输入年龄:\n");
-	scanf("%d", &pc->date[pos].age);
+	scanf("%d", &pc->data[pos].age);
 	printf("请输入电话:\n");
-	scanf("%s", pc->date[pos].tele);
+	scanf("%s", pc->data[pos].tele);
 	printf("请输入地址:\n");
-	scanf("%s", pc->date[pos].addr);
+	scanf("%s", pc->data[pos].addr);
 }
 //6. 显示所有联系人信息
 void Show(pcontact pc){
 	for (int i = 0; i < pc->size; i++){
 		printf("===========第%d个人============\n",i);
-		printf("姓名:%s\n", pc->date[i].name);
-		printf("性别:%s\n", pc->date[i].gender);
-		printf("年龄:%d\n", &pc->date[i].age);
-		printf("电话:%s\n", pc->date[i].tele);
-		printf("地址:%s\n", pc->date[i].addr);
+		printf("姓名:%s\n", pc->data[i].name);
+		printf("性别:%s\n", pc->data[i].gender);
+		printf("年龄:%d\n", &pc->data[i].age);
+		printf("电话:%s\n", pc->data[i].tele);
+		printf("地址:%s\n", pc->data[i].addr);
 		printf("===============================\n");
 	}
 }
 //7. 清空所有联系人
 void Empty(pcontact pc){
-
+	pc->size = 0;
 }
 //8. 以名字排序所有联系人
 void Sort(pcontact pc){
-
+	for (int sz = pc->size; sz > 0; sz--){
+		for (int i = 0; i < sz; i++){
+			if (strcmp(pc->data[i-1].name, pc->data[i].name)>0){
+				info tmp = pc->data[i - 1];
+				pc->data[i - 1] = pc->data[i];
+				pc->data[i] = tmp;
+			}
+		}
+	}
 }
 //9. 保存联系人到文件
 void Save(pcontact pc){

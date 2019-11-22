@@ -4,6 +4,7 @@
 #define TELE_MAX 20
 #define ADDR_MAX 100
 #define MAX 200
+#define DEFAULT 10
 
 //定义联系人信息
 typedef struct information{
@@ -14,11 +15,18 @@ typedef struct information{
 	char addr[ADDR_MAX];
 }info;
 
-//通讯录内容
+//通讯录内容 静态存储
+//typedef struct contact{
+//	info data[MAX];
+//	int size;
+//}contact,*pcontact;
+
+//动态存储
 typedef struct contact{
-	info date[MAX];
+	info* data;
 	int size;
-}contact,*pcontact;
+	int capacity;//空间大小
+}contact, *pcontact;
 
 //1.初始化
 void Init(pcontact pc);
