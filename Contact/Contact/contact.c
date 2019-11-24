@@ -11,21 +11,30 @@ void Init(pcontact pc){
 	pc->capacity = DEFAULT;
 }
 
+//2. 添加联系人信息
+
 //检查空间
 int cheak_capacity(pcontact pc){
 	if (pc->size == pc->capacity){
-	pc->data = (info*)realloc(pc->data,sizeof(info*)* pc->capacity + 10);
-	if (pc->data == NULL){
-		return 0;
+		/*pc->data = (info*)realloc(pc->data, sizeof(info)* pc->capacity + 10);
+		if (pc->data == NULL){
+			return 0;*/
+		info* tmp = (info*)malloc(sizeof(info)*(pc->capacity + 10));
+		if (tmp==NULL){
+			return 0;
 		}
+		memcpy(tmp, pc->data, sizeof(info)*pc->size);
+		free(pc->data);
+		pc->data = tmp;
+		pc->capacity += 10;
 	}
 	return 1;
 }
 
-//2. 添加联系人信息
+//添加联系人信息
 void Add(pcontact pc){
 	info curinfo;
-	if (cheak_capacity(pc->capacity)==0){
+	if (cheak_capacity(pc)==0){
 		printf("通讯录已满!添加失败!\n");
 		return;
 	}
@@ -46,9 +55,12 @@ void Add(pcontact pc){
 
 }
 
+//3. 删除指定联系人信息
+
+//找到信息是否存在
 int Find(pcontact pc, char* name){
 	for (int i = 0; i < pc->size; i++){
-		if (strcmp(pc->data[i].name , name)==0)
+		if (strcmp(pc->data[i].name, name) == 0)
 		{
 			return i;
 		}
@@ -56,7 +68,7 @@ int Find(pcontact pc, char* name){
 	return 0;
 }
 
-//3. 删除指定联系人信息
+// 删除指定联系人信息
 void Delete(pcontact pc){
 	char name[NAME_MAX];
 	printf("输入要删除的名字!\n");
@@ -141,10 +153,31 @@ void Sort(pcontact pc){
 }
 //9. 保存联系人到文件
 void Save(pcontact pc){
-
+	FILE* pf=fopen("contact.dat", "wb");
+	if (pf == NULL){
+		printf("保存失败!\n");
+		return;
+	}
+	for (int i = 0; i < pc->size; i++){
+		fwrite(pc->data + i, sizeof(info), 1, pf);
+	}
+	fclose(pf);
 }
 //10. 加载联系人
 void Load(pcontact pc){
-
+	FILE* pf = fopen("contact.dat", "rb");
+	if (pf == NULL){
+		printf("加载失败!!\n");
+		return;
+	}
+	//读取文件内容
+	info curinfo;
+	while (fread(&curinfo, sizeof(info), 1, pf)){
+		if (cheak_capacity(pc)){
+			pc->data[pc->size] = curinfo;
+			pc->size++;
+		}
+	}
+	fclose(pf);
 }
 

@@ -30,8 +30,12 @@ typedef struct contact{
 
 //1.初始化
 void Init(pcontact pc);
+//检查空间
+int cheak_capacity(pcontact pc);
 //2. 添加联系人信息
 void Add(pcontact pc);
+//查找是否存在
+int Find(pcontact pc, char* name);
 //3. 删除指定联系人信息
 void Delete(pcontact pc);
 //4. 查找指定联系人信息
