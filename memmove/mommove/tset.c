@@ -28,11 +28,11 @@ void* Memmove(void* dst, const void* src, size_t num)
 
 int main(){
 		int a2[10] = { 1, 2, 3, 4, 5 };
-		int a1[10];
-		Memmove(a1, a2, 10 * sizeof(int));
+		int a1[10] = { 0 };
+		Memmove(a1, a2, 2 * sizeof(int));
 		for (int i = 0; i < 10; ++i)
 		{
-			printf("%d ", a2[i]);
+			printf("%d ", a1[i]);
 		}
 		printf("\n");
 	system("pause");

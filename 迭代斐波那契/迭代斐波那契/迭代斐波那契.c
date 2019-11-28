@@ -7,8 +7,22 @@ int fib(int n){
 	return fib(n - 1) + fib(n - 2);
 
 }
+
+int con(int a){
+	int count = 0;
+	for (int i = 0; i < 50; i++){
+		if (a = fib(i)){
+			return count;;
+		}
+		else{
+			a++;
+			count++;
+		}
+	}
+	return count;
+}
 int main(){
-	int n = fib(5);
+	int n = con(15);
 	printf("%d\n", n);
 	system("pause");
 }
