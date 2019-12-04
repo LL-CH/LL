@@ -46,13 +46,13 @@ void CheckCacpity(SeqList* ps)
 //尾部插入
 void SeqListPushBack(SeqList* ps, SLDateType x)
 {
-	//assert(ps);
-	//CheckCacpity(ps);
+	assert(ps);
+	CheckCacpity(ps);
 
-	//ps->a[ps->size] = x;
-	//ps->size++;
+	ps->a[ps->size] = x;
+	ps->size++;
 
-	SeqListInsert(ps, ps->size, x);
+	//SeqListInsert(ps, ps->size, x);
 }
 
 //头部插入
@@ -60,7 +60,7 @@ void SeqListPushFront(SeqList* ps, SLDateType x)
 {
 	assert(ps);
 
-	/*CheckCacpity(ps);
+	CheckCacpity(ps);
 
 	size_t end = ps->size;
 	while (end > 0)
@@ -70,9 +70,9 @@ void SeqListPushFront(SeqList* ps, SLDateType x)
 	}
 
 	ps->a[0] = x;
-	++ps->size;*/
+	ps->size++;
 
-	SeqListInsert(ps, 0, x);
+	//SeqListInsert(ps, 0, x);
 }
 
 //头部删除
@@ -80,21 +80,22 @@ void SeqListPopFront(SeqList* ps)
 {
 	assert(ps);
 
-	//size_t start = 0;
-	//while (start < ps->size-1)
-	//{
-	//	ps->a[start] = ps->a[start + 1];
-	//	++start;
-	//}
-	//size_t start = 1;
-	//while (start < ps->size)
-	//{
-	//	ps->a[start-1] = ps->a[start];
-	//	++start;
-	//}
+	size_t start = 0;
+	while (start < ps->size-1)
+	{
+		ps->a[start] = ps->a[start + 1];
+		++start;
+	}
+	ps->size--;
+	/*size_t start = 1;
+	while (start < ps->size)
+	{
+		ps->a[start-1] = ps->a[start];
+		++start;
+	}
 
-	//--ps->size;
-	SeqListErase(ps, 0);
+	ps->size--;*/
+	//SeqListErase(ps, 0);
 }
 
 //尾部删除
@@ -102,9 +103,9 @@ void SeqListPopBack(SeqList* ps)
 {
 	assert(ps);
 
-	//ps->a[ps->size - 1] = 0;
-	//ps->size--;
-	SeqListErase(ps, ps->size - 1);
+	ps->a[ps->size - 1] = 0;
+	ps->size--;
+	//SeqListErase(ps, ps->size - 1);
 }
 
 //查找x的位置
@@ -129,7 +130,7 @@ void SeqListInsert(SeqList* ps, size_t pos, SLDateType x)
 
 	CheckCacpity(ps);
 
-	//int end = ps->size - 1;
+	//size_t end = ps->size - 1;
 	//while (end >= (int)pos)
 	//{
 	//	ps->a[end + 1] = ps->a[end];
