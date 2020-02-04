@@ -1,12 +1,11 @@
 /*示例 1：
-
 输入：name = "alex", typed = "aaleex"
-输出：true
+输出：true(1)
 解释：'alex' 中的 'a' 和 'e' 被长按。
-示例 2：
 
+示例 2：
 输入：name = "saeed", typed = "ssaaedd"
-输出：false
+输出：false(0)
 解释：'e' 一定需要被键入两次，但在 typed 的输出中不是这样。*/
 
 #include<stdio.h>
