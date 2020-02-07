@@ -33,17 +33,17 @@ int sort(int* str,int len){
 void sort2(int *str,int len){
 	int start = 0;
 	int end = len - 1;
-	int tmp = 0;
+	int temp = 0;
 	while (start < end){
-		while (start < end && str[start] % 2 != 0){
+		while (start < end && str[start] % 2 != 0){   //%2==0;
 		++start;
 		}
-		while (start < end && str[end] % 2 == 0){
+		while (start < end && str[end] % 2 == 0){    //%2!=0;   偶数在前,奇数在后
 		--end;
 		}
-		tmp = str[start];
+		temp = str[start];
 		str[start] = str[end];
-		str[end] = tmp;
+		str[end] = temp;
 	}
 }
 
