@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "最短连续子数组", "最短连续子数组\最短连续子数组.vcxproj", "{EF556031-DBEC-42F9-BAF1-81F513FB1108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF556031-DBEC-42F9-BAF1-81F513FB1108}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF556031-DBEC-42F9-BAF1-81F513FB1108}.Debug|Win32.Build.0 = Debug|Win32
+		{EF556031-DBEC-42F9-BAF1-81F513FB1108}.Release|Win32.ActiveCfg = Release|Win32
+		{EF556031-DBEC-42F9-BAF1-81F513FB1108}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
