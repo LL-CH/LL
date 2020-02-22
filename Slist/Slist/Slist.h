@@ -11,7 +11,9 @@ typedef struct SListNode
 	struct SListNode* next;
 }SListNode;
 
-//输出
+// 动态申请一个节点
+SListNode* BuySListNode(SLTDateType x);
+//输出(打印)
 void SListPrint(SListNode* pList);
 //尾插
 void SListPushBack(SListNode** ppList, SLTDataType x);
@@ -27,6 +29,5 @@ SListNode* SListFind(SListNode* plist, SLTDataType x);
 void SListInsertAfter(SListNode* pos, SLTDataType x);
 // 单链表删除pos位置之后的值
 void SListEraseAfter(SListNode* pos);
-
-
+//单链表的销毁
 void SListDestory(SListNode** pplist);

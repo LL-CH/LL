@@ -1,5 +1,6 @@
 #include "SList.h"
 
+//打印
 void SListPrint(SListNode* pList)
 {
 	SListNode* cur = pList;
@@ -12,7 +13,7 @@ void SListPrint(SListNode* pList)
 	printf("NULL\n");
 }
 
-//创建一个新的结构体
+//动态申请一个节点
 SListNode* BuySListNode(SLTDataType x)
 {
 	SListNode* newNode = (SListNode*)malloc(sizeof(SListNode));
@@ -102,6 +103,7 @@ void SListPopFront(SListNode** ppList){
 	}
 }
 
+// 查找
 SListNode* SListFind(SListNode* pList, SLTDataType x)
 {
 	SListNode* cur = pList;
@@ -120,7 +122,7 @@ SListNode* SListFind(SListNode* pList, SLTDataType x)
 	return NULL;
 }
 
-
+//pos处插入x
 void SListInsertAfter(SListNode* pos, SLTDataType x)
 {
 	/*SListNode* newnode = BuySListNode(x);
@@ -133,6 +135,7 @@ void SListInsertAfter(SListNode* pos, SLTDataType x)
 	newnode->next = pos->next;
 }
 
+//删除pos
 void SListEraseAfter(SListNode* pos)
 {
 	SListNode* next = pos->next;
@@ -143,7 +146,7 @@ void SListEraseAfter(SListNode* pos)
 	}
 }
 
-
+//销毁
 void SListDestory(SListNode** pplist)
 {
 	SListNode* cur = *pplist;
