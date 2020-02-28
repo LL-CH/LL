@@ -1,4 +1,6 @@
 #include "Heap.h"
+#include<string.h>
+#include <malloc.h>
 
 // 小堆 
 // ->条件：左右子树都是堆
@@ -11,7 +13,7 @@ void AdjustDown(HpDataType* a, size_t n, int root)
 		// 找出小的那个孩纸
 		if (child + 1 < n && a[child + 1] < a[child])
 		{
-			++child;
+			child++;
 		}
 
 		// 1、孩纸比父亲小，则交换，继续往下调
@@ -21,7 +23,6 @@ void AdjustDown(HpDataType* a, size_t n, int root)
 			HpDataType tmp = a[parent];
 			a[parent] = a[child];
 			a[child] = tmp;
-
 			parent = child;
 			child = parent * 2 + 1;
 		}
@@ -31,6 +32,28 @@ void AdjustDown(HpDataType* a, size_t n, int root)
 		}
 	}
 }
+
+//最后插入一个数
+void AdjustUp(int* a, HpDataType child)
+{
+	while (child > 0)
+	{
+		HpDataType tmp;
+		int parent = (child - 1) / 2;
+		if (a[child] < a[parent]){
+			tmp = a[child];
+			a[child] = a[parent];
+			a[parent] = tmp;
+			child = parent;
+			parent = (child - 1) / 2;
+		}
+		else{
+			break;
+		}
+	}
+}
+
+
 
 Heap* HeapCreate(HpDataType* a, size_t n)
 {
@@ -52,7 +75,10 @@ Heap* HeapCreate(HpDataType* a, size_t n)
 
 void HeapPush(Heap* hp, HpDataType x)
 {
-
+	if (hp->_size == hp->_capacity){
+		HpDataType newcapcity = hp->_capacity * 2;
+		hp->_a = (HpDataType*)realloc(sizeof(HpDataType))*newcapcity;
+	}
 }
 void HeapPop(Heap* hp);
 HpDataType HeapTop(Heap* hp);
