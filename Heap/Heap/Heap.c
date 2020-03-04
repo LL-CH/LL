@@ -121,3 +121,45 @@ void HeapPrint(Heap* hp)
 	}
 	printf("\n");
 }
+
+// 最大十个数
+void PrintTopK(int* a, int n, int k)
+{
+	// k个数的小堆
+	Heap hp;
+	HeapCreate(&hp, a, k);
+
+	for (int i = k; i < n; ++i)
+	{
+		// 比堆顶的数据要大，就替代它
+		if (HeapTop(&hp) < a[i])
+		{
+			HeapPop(&hp);
+			HeapPush(&hp, a[i]);
+		}
+	}
+
+	HeapPrint(&hp);
+}
+
+void TestTopk()
+{
+	int n = 10000;
+	int* a = (int*)malloc(sizeof(int)*n);
+	srand(time(0));
+	for (size_t i = 0; i < n; ++i)
+	{
+		a[i] = rand() % 1000000;
+	}
+	a[15] = 1000000 + 1;
+	a[1231] = 1000000 + 2;
+	a[531] = 1000000 + 30;
+	a[5121] = 1000000 + 4;
+	a[115] = 1000000 + 5;
+	a[2335] = 1000000 + 6;
+	a[9999] = 1000000 + 7;
+	a[760] = 1000000 + 8;
+	a[423] = 1000000 + 9;
+	a[3144] = 1000000 + 10;
+	PrintTopK(a, n, 10);
+}

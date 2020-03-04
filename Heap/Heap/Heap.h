@@ -32,5 +32,5 @@ int HeapEmpty(Heap* hp);
 //Êä³ö
 void HeapPrint(Heap* hp);
 
-
 // topK
+void PrintTopK(int* a, int n, int k)£»
