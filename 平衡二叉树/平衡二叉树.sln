@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "平衡二叉树", "平衡二叉树\平衡二叉树.vcxproj", "{3346A8AE-0D31-4F21-A943-A292FD851142}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3346A8AE-0D31-4F21-A943-A292FD851142}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3346A8AE-0D31-4F21-A943-A292FD851142}.Debug|Win32.Build.0 = Debug|Win32
+		{3346A8AE-0D31-4F21-A943-A292FD851142}.Release|Win32.ActiveCfg = Release|Win32
+		{3346A8AE-0D31-4F21-A943-A292FD851142}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
