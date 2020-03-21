@@ -7,6 +7,13 @@ void Print(int* a, int n){
 	printf("\n");
 }
 
+void Print(int* a, int n){
+	for (int i = 0; i < n; i++){
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+}
+
 //²åÈëÅÅÐò
 void InsertSort(int* a, int n){
 	for (int i = 0; i < n - 1; i++){
@@ -70,11 +77,16 @@ void SelectSort(int* a, int n){
 				min = i;
 		}
 		swap(&a[begin], &a[min]);
+<<<<<<< HEAD
 		if (begin == max)
+=======
+		if (begin = max)
+>>>>>>> 4c8a086056ba229c8a41a49dcbb48650f6ac80c0
 			max = min;
 		swap(&a[end], &a[max]);
 		begin++;
 		end--;
+<<<<<<< HEAD
 	}
 }
 
@@ -163,6 +175,8 @@ int HoareMethod(int* a, int begin, int end){
 			--end;
 
 		swap(&a[begin], &a[end]);
+=======
+>>>>>>> 4c8a086056ba229c8a41a49dcbb48650f6ac80c0
 	}
 
 	swap(&a[begin], &a[keyindex]);
