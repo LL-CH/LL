@@ -31,6 +31,7 @@ HpDataType HeapTop(Heap* hp);
 int HeapEmpty(Heap* hp);
 //Êä³ö
 void HeapPrint(Heap* hp);
-
+//¶ÑÅÅÐò
+void HeapSort(int* a, int n);
 // topK
-void PrintTopK(int* a, int n, int k)£»
+void PrintTopK(int* a, int n, int k);

@@ -122,6 +122,25 @@ void HeapPrint(Heap* hp)
 	printf("\n");
 }
 
+//堆排序
+void HeapSort(int* a, int n)
+{
+	// 排升序，建大堆
+	for (int i = (n - 1 - 1) / 2; i >= 0; --i)
+	{
+		AdjustDwon(a, n, i);
+	}
+
+	int end = n - 1;
+	while (end > 0){
+		// 把堆顶当前最大数一次换到最后
+		swap(&a[0], &a[end]);
+		// 调堆选出剩下的数当中最大
+		AdjustDwon(a, end, 0);
+		--end;
+	}
+}
+
 // 最大十个数
 void PrintTopK(int* a, int n, int k)
 {
