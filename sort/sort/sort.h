@@ -1,11 +1,7 @@
 #pragma once
+#include "stack.h"
+#include<string.h>
 
-void Print(int* a, int n){
-	for (int i = 0; i < n; i++){
-		printf("%d ", a[i]);
-	}
-	printf("\n");
-}
 
 void Print(int* a, int n){
 	for (int i = 0; i < n; i++){
@@ -77,16 +73,16 @@ void SelectSort(int* a, int n){
 				min = i;
 		}
 		swap(&a[begin], &a[min]);
-<<<<<<< HEAD
+
 		if (begin == max)
-=======
+
 		if (begin = max)
->>>>>>> 4c8a086056ba229c8a41a49dcbb48650f6ac80c0
+
 			max = min;
 		swap(&a[end], &a[max]);
 		begin++;
 		end--;
-<<<<<<< HEAD
+
 	}
 }
 
@@ -157,6 +153,31 @@ void BubbleSort(int* a, int n){
 	}
 }
 
+//三数取中
+int GetMidIndex(int* a, int begin, int end)
+{
+	int mid = (begin + end) >> 1;
+	// begin mid end
+	if (a[begin] < a[mid])
+	{
+		if (a[mid] < a[end])
+			return mid;
+		else if (a[begin] < a[end]) // a[mid] > a[end]
+			return end;
+		else
+			return begin;
+	}
+	else // a[begin] > a[mid]
+	{
+		if (a[mid] > a[end])
+			return mid;
+		else if (a[begin] < a[end]) // a[mid] < a[end]
+			return begin;
+		else
+			return end;
+	}
+}
+
 //快排
 // hoare法
 int HoareMethod(int* a, int begin, int end){
@@ -175,8 +196,6 @@ int HoareMethod(int* a, int begin, int end){
 			--end;
 
 		swap(&a[begin], &a[end]);
-=======
->>>>>>> 4c8a086056ba229c8a41a49dcbb48650f6ac80c0
 	}
 
 	swap(&a[begin], &a[keyindex]);
@@ -204,6 +223,10 @@ int DigHoleMethod(int* a, int begin, int end){
 
 // 前后指针版本 
 int PrevCurMethod(int* a, int begin, int end){
+	//数组有序时
+	//int midindex = GetMidIndex(a, begin, end);
+	//Swap(&a[midindex], &a[end]);
+
 	int prev = begin - 1;
 	int cur = begin;
 	int key = a[end];
@@ -230,4 +253,73 @@ void QuickSort(int* a, int begin, int end){
 	// [begin, keyindex-1]  key  [keyindex+1,end]
 	QuickSort(a, begin, keyindex - 1);
 	QuickSort(a, keyindex + 1, end);
+}
+
+//非递归
+void QuickSortNonr(int *a, int begin, int end){
+	//开一个栈实现
+	Stack st;
+	StackInit(&st);
+	StackPush(&st, begin);
+	StackPush(&st, end);
+	while (!StackEmpty(&st)){
+		int right = StackTop(&st);
+		StackPop(&st);
+		int left = StackTop(&st);
+		StackPop(&st);
+		int keyindex = PrevCurMethod(a, left, right);
+		// [left, keyindex-1]  keyindex  [keyindex+1,right]
+		if (left < keyindex - 1){
+			StackPush(&st, left);
+			StackPush(&st, keyindex - 1);
+		}
+		if (right > keyindex + 1){
+			StackPush(&st, keyindex + 1);
+			StackPush(&st, right);
+		}
+	}
+	StackDestroy(&st);
+}
+
+//归并
+void Merge(int *a, int begin, int end,int *tmp){
+	if (begin >= end)
+		return;
+	//划分
+	int mid = (begin + end) / 2;
+	Merge(a, begin, mid,tmp);
+	Merge(a, mid + 1, end,tmp);
+	//归并
+	int begin1 = begin, end1 = mid;
+	int begin2 = mid + 1, end2 = end;
+	int index = begin;
+	while (begin1 <= end1 && begin2 <= end2)
+	{
+		if (a[begin1] < a[begin2])
+			tmp[index++] = a[begin1++];
+		else
+			tmp[index++] = a[begin2++];
+	}
+
+	if (begin1 <= end1)
+	{
+		while (begin1 <= end1)
+			tmp[index++] = a[begin1++];
+	}
+	else
+	{
+		while (begin2 <= end2)
+			tmp[index++] = a[begin2++];
+	}
+
+	// 将归并到tmp的数据归并回元数组
+	memcpy(a + begin, tmp + begin, sizeof(int)*(end - begin + 1));
+}
+
+
+//归并排序
+void MergeSort(int *a, int n){
+	int *tmp = (int *)malloc(sizeof(int)*n);
+	Merge(a, 0, n - 1, tmp);
+	free(tmp);
 }

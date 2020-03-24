@@ -42,13 +42,21 @@ void testQuickSort()
 	Print(a, sizeof(a) / sizeof(int));
 }
 
+void testMergeSort()
+{
+	int a[] = { 2, 3, 7, 4, 8, 6, 9, 2, 1 };
+	MergeSort(a, sizeof(a) / sizeof(int)-1);
+	Print(a, sizeof(a) / sizeof(int));
+}
+
 int main(){
 	//testInsertSort();
 	//testShellSort();
 	//testSelectSort();
 	//testHeapSort();
 	//testBubbleSort();
-	testQuickSort();
+	//testQuickSort();
+	testMergeSort();
 
 	system("pause");
 	return 0;
