@@ -64,10 +64,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="queal.h" />
     <ClInclude Include="Treesize.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.c" />
+    <ClCompile Include="queal.c" />
     <ClCompile Include="Treesize.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

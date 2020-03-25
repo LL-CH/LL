@@ -1,9 +1,25 @@
 #include<stdio.h>
+#include<string.h>
+#include<malloc.h>
 #include"Treesize.h"
+#include"queal.h"
 
 // 通过前序遍历的数组"ABD##E#H##CF##G##"构建二叉树
 BTNode* BinaryTreeCreate(BTDataType* a, int n, int* pi){
+	if (a[*pi] == '#' || *pi >= n)
+	{
+		(*pi)++;
+		return NULL;
+	}
 
+	BTNode * cur = (BTNode *)malloc(sizeof(BTNode));
+	cur->_data = a[*pi];
+	(*pi)++;
+
+	cur->left = BinaryTreeCreate(a,n,pi);
+	cur->right = BinaryTreeCreate(a,n,pi);
+
+	return cur;
 }
 
 // 二叉树销毁
@@ -92,10 +108,69 @@ void BinaryTreePostOrder(BTNode* root){
 
 // 层序遍历
 void BinaryTreeLevelOrder(BTNode* root){
+	Queue qu;
+	BTNode * cur;
 
+	QueueInit(&qu);
+
+	QueuePush(&qu, root);
+
+	while (!QueueEmpty(&qu))
+	{
+		cur = QueueFront(&qu);
+
+		putchar(cur->_data);
+
+		if (cur->left)
+		{
+			QueuePush(&qu, cur->left);
+		}
+
+		if (cur->right)
+		{
+			QueuePush(&qu, cur->right);
+		}
+
+		QueuePop(&qu);
+	}
+
+	QueueDestory(&qu);
 }
 
 // 判断二叉树是否是完全二叉树
 int BinaryTreeComplete(BTNode* root){
+	Queue qu;
+	BTNode * cur;
+	int tag = 0;
 
+	QueueInit(&qu);
+	QueuePush(&qu, root);
+
+	while (!QueueEmpty(&qu)){
+		cur =  QueueFront(&qu);
+		putchar(cur->_data);
+		if (cur->right && !cur->left)
+		{
+			return 0;
+		}
+		if (tag && (cur->right || cur->left))
+		{
+			return 0;
+		}
+		if (cur->left)
+		{
+			QueuePush(&qu, cur->left);
+		}
+		if (cur->right)
+		{
+			QueuePush(&qu, cur->right);
+		}
+		else
+		{
+			tag = 1;
+		}
+		QueuePop(&qu);
+	}
+	QueueDestory(&qu);
+	return 1;
 }

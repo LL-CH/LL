@@ -18,12 +18,15 @@
     <ClInclude Include="Treesize.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="queal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Treesize.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.c">
+    <ClCompile Include="queal.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
