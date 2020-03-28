@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.c" />
-    <ClCompile Include="Testcount.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

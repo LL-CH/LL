@@ -323,3 +323,36 @@ void MergeSort(int *a, int n){
 	Merge(a, 0, n - 1, tmp);
 	free(tmp);
 }
+
+//计数排序
+void CountSort(int* a, int n)
+{
+	int max = a[0], min = a[0];
+	for (int i = 0; i < n; ++i)
+	{
+		if (a[i] > max)
+			max = a[i];
+
+		if (a[i] < min)
+			min = a[i];
+	}
+	//找到数据的范围
+	int range = max - min + 1;
+	int* countArray = (int*)malloc(range*sizeof(int));
+	memset(countArray, 0, sizeof(int)*range);
+	//存放在相对位置，可以节省空间
+	for (int i = 0; i < n; ++i)
+	{
+		countArray[a[i] - min]++;
+	}
+	//可能存在重复的数据，有几个存几个
+	int index = 0;
+	for (int i = 0; i < range; ++i)
+	{
+		while (countArray[i]--)
+		{
+			a[index] = i + min;
+			index++;
+		}
+	}
+}
