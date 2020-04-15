@@ -103,13 +103,16 @@ public:
 				ret._month = 1;
 			}
 		}
-
 		return ret;
 	}
 
 	// d1 += 10
 	Date& operator+=(int day)
-	{
+	{	
+		if (day<0){
+			return *this -= -day;
+		}
+
 		_day += day;
 		while (_day > GetMonthDay(_year, _month))
 		{
@@ -126,13 +129,58 @@ public:
 	}
 
 	// d1-=10
-	Date& operator-=(int day);
+	Date& operator-=(int day){
+		if (day<0){
+			return *this += -day;
+		}
+
+		_day -= day;
+		while (_day <= 0){
+			--_month;
+			if (_month == 0){
+				--_year;
+				_month = 12;
+			}
+			_day += GetMonthDay(_year, _month);
+		}
+		return *this;
+	}
 	// d1 - 10
-	Date& operator-(int day);
+	Date operator-(int day){
+		Date ret = *this;
+		ret -= day;
+		while (ret._day <= 0){
+			--ret._month;
+			if (ret._month == 0){
+				--ret._year;
+				ret._month = 12;
+			}
+			ret._day = GetMonthDay(ret._day, ret._month);
+		}
+		return ret;
+	}
 	// ++d1
-	Date& operator++();
+	Date& operator++(){
+		*this += 1;
+		return *this;//返回加之后的值
+	}
+	//d1++
+	Date operator++(int){//为了构成函数重载
+		Date ret(*this);
+		*this += 1;
+		return ret;//返回加之前的值
+	}
 	// --d1
-	Date& operator--();
+	Date& operator--(){
+		*this -= 1;
+		return *this;
+	}
+	// d1--
+	Date operator--(int){
+		Date ret(*this);
+		*this -= 1;
+		return ret;
+	}
 	// d1 - d2
 	int operator-(const Date& d);
 
