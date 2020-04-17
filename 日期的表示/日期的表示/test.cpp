@@ -90,7 +90,7 @@ public:
 	Date operator+(int day)
 	{
 		Date ret(*this); // 用d1拷贝构造一个ret
-		ret._day += day;
+		/*ret._day += day;
 		while (ret._day > GetMonthDay(ret._year, ret._month))
 		{
 			// 如果日期的天不合法，就需要往月进度
@@ -102,7 +102,8 @@ public:
 				ret._year++;
 				ret._month = 1;
 			}
-		}
+		}*/
+		ret += day;
 		return ret;
 	}
 
@@ -182,7 +183,22 @@ public:
 		return ret;
 	}
 	// d1 - d2
-	int operator-(const Date& d);
+	int operator-(const Date& d){
+		int flag = 1;
+		Date max = *this;
+		Date min = d;
+		if (*this < d){
+			min = *this;
+			max = d;
+			flag = -1;
+		}
+		int day = 0;
+		while (min < max){
+			++min;
+			++day;
+		}
+		return day*flag;
+	}
 
 	void Print()
 	{
@@ -192,10 +208,6 @@ private:
 	int _year;
 	int _month;
 	int _day;
-
-	//int _hour;
-	//int _minute;
-	//int _second;
 };
 
 int main()
