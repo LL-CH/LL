@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "计算一年的第几天", "计算一年的第几天\计算一年的第几天.vcxproj", "{444B2ED8-48DD-4B70-8CF9-60D27703D049}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{444B2ED8-48DD-4B70-8CF9-60D27703D049}.Debug|Win32.ActiveCfg = Debug|Win32
+		{444B2ED8-48DD-4B70-8CF9-60D27703D049}.Debug|Win32.Build.0 = Debug|Win32
+		{444B2ED8-48DD-4B70-8CF9-60D27703D049}.Release|Win32.ActiveCfg = Release|Win32
+		{444B2ED8-48DD-4B70-8CF9-60D27703D049}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
