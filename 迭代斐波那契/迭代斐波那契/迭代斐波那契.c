@@ -21,8 +21,10 @@ int con(int a){
 	}
 	return count;
 }
+
+
 int main(){
-	int n = con(15);
+	int n = con(5);
 	printf("%d\n", n);
 	system("pause");
 }
