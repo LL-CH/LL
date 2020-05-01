@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-main()
+ int main()
 {
 	int count = 0;
 	int num = 0;
