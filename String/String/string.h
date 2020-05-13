@@ -249,13 +249,14 @@ namespace LL
 		//posŒª÷√≤Â»Îch
 		string& insert(size_t pos, char ch)
 		{
+			assert(pos <_size);
 			if (_size == _capacity)
 			{
 				size_t newcapacity = _capacity == 0 ? 2 : _capacity * 2;
 				reserve(newcapacity);
 			}
-			size_t end = _size;
-			while (end >= pos)
+			int end = _size;
+			while (end >= (int)pos)
 			{
 				_str[end + 1] = _str[end];
 				--end;
@@ -267,19 +268,21 @@ namespace LL
 
 		string& insert(size_t pos, const char* str)
 		{
+			assert(pos <_size);
 			size_t len = strlen(str);
 			if (_size + len > _capacity)
 			{
 				reserve(_size + len);
 			}
 
-			size_t end = _size;
-			while (end >= pos)
+			int end = _size;
+			while (end >= (int)pos)
 			{
 				_str[end + len] = _str[end];
 				--end;
 			}
 			strncpy(_str + pos, str, len);
+			_size += len;
 			return *this;
 		}
 
@@ -446,5 +449,14 @@ namespace LL
 		s2 += ' ';
 		s2 += "world";
 		cout << s2 << endl;
+	}
+
+	void test_string3()
+	{
+		string s1("hello");
+		s1.insert(0,"abvacsh");
+		cout << s1 << endl;
+
+
 	}
 }

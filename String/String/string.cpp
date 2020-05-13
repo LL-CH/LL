@@ -8,8 +8,8 @@ using namespace std;
 int main()
 {
 	//LL::test_string1();
-	LL::test_string2();
-
+	//LL::test_string2();
+	LL::test_string3();
 	system("pause");
 	return 0;
 }
