@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "最小栈", "最小栈\最小栈.vcxproj", "{9007AA4B-60E1-4647-BC28-704AA79DC106}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9007AA4B-60E1-4647-BC28-704AA79DC106}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9007AA4B-60E1-4647-BC28-704AA79DC106}.Debug|Win32.Build.0 = Debug|Win32
+		{9007AA4B-60E1-4647-BC28-704AA79DC106}.Release|Win32.ActiveCfg = Release|Win32
+		{9007AA4B-60E1-4647-BC28-704AA79DC106}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
