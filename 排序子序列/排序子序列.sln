@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "排序子序列", "排序子序列\排序子序列.vcxproj", "{281B8D32-3B73-465D-989B-3DDD32D97108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281B8D32-3B73-465D-989B-3DDD32D97108}.Debug|Win32.ActiveCfg = Debug|Win32
+		{281B8D32-3B73-465D-989B-3DDD32D97108}.Debug|Win32.Build.0 = Debug|Win32
+		{281B8D32-3B73-465D-989B-3DDD32D97108}.Release|Win32.ActiveCfg = Release|Win32
+		{281B8D32-3B73-465D-989B-3DDD32D97108}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
