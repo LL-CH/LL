@@ -48,7 +48,8 @@ public:
 		// 因为用到了sort，时间复杂度O(NlogN)，并非最优
 		if (numbers.empty()) return 0;
 
-		sort(numbers.begin(), numbers.end()); // 排序，取数组中间那个数
+		sort(numbers.begin(), numbers.end()); // 排序，取数组中间那个数 
+		//因为如果数组中一半的数都一样,则中间数就是那个数
 		int mid = numbers[numbers.size() / 2];
 
 		int count = 0; // 出现次数
