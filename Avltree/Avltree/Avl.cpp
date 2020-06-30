@@ -212,12 +212,13 @@ public:
 		cout << root->_kv.first << ":" << root->_kv.second << endl;
 		_InOrder(root->_right);
 	}
-
+	//中序遍历
 	void InOrder()
 	{
 		_InOrder(_root);
 	}
 
+	//求高度
 	int Height(Node* root)
 	{
 		if (root == nullptr)
@@ -241,7 +242,7 @@ public:
 			&& _IsBalance(root->_left)
 			&& _IsBalance(root->_right);
 	}
-
+	//判断平衡
 	bool IsBalance()
 	{
 		return _IsBalance(_root);
