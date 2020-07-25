@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "表示数值的字符串", "表示数值的字符串\表示数值的字符串.vcxproj", "{4A8EBF7E-8733-4F8F-8EB9-49AF2BADC498}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A8EBF7E-8733-4F8F-8EB9-49AF2BADC498}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A8EBF7E-8733-4F8F-8EB9-49AF2BADC498}.Debug|Win32.Build.0 = Debug|Win32
+		{4A8EBF7E-8733-4F8F-8EB9-49AF2BADC498}.Release|Win32.ActiveCfg = Release|Win32
+		{4A8EBF7E-8733-4F8F-8EB9-49AF2BADC498}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
