@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "复杂链表的复制", "复杂链表的复制\复杂链表的复制.vcxproj", "{A86FD545-AD8F-44CE-9369-828B46526668}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A86FD545-AD8F-44CE-9369-828B46526668}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A86FD545-AD8F-44CE-9369-828B46526668}.Debug|Win32.Build.0 = Debug|Win32
+		{A86FD545-AD8F-44CE-9369-828B46526668}.Release|Win32.ActiveCfg = Release|Win32
+		{A86FD545-AD8F-44CE-9369-828B46526668}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
