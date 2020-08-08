@@ -132,9 +132,9 @@ int main(){
 	//testSelectSort();
 	//testHeapSort();
 	//testBubbleSort();
-	//testQuickSort();
+	testQuickSort();
 	//testMergeSort();
-	testCountSort();
+	//testCountSort();
 	system("pause");
 	return 0;
 }
