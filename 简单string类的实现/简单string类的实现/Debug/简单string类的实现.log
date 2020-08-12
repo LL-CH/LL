@@ -1,0 +1,12 @@
+﻿生成启动时间为 2020/8/11 9:40:43。
+     1>项目“C:\Users\ll\Desktop\LL\简单string类的实现\简单string类的实现\简单string类的实现.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\新建文件夹\vcs\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+     1>c:\users\ll\desktop\ll\简单string类的实现\简单string类的实现\test.cpp(13): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\新建文件夹\vcs\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>已完成生成项目“C:\Users\ll\Desktop\LL\简单string类的实现\简单string类的实现\简单string类的实现.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.40
