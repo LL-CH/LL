@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
@@ -20,3 +21,27 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "数字序列中某一位的数字", "数字序列中某一位的数字\数字序列中某一位的数字.vcxproj", "{B22715C4-6BA3-4340-92EB-ACD43E589AF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B22715C4-6BA3-4340-92EB-ACD43E589AF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B22715C4-6BA3-4340-92EB-ACD43E589AF6}.Debug|Win32.Build.0 = Debug|Win32
+		{B22715C4-6BA3-4340-92EB-ACD43E589AF6}.Release|Win32.ActiveCfg = Release|Win32
+		{B22715C4-6BA3-4340-92EB-ACD43E589AF6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+>>>>>>> 5900e5ef2a8a1507a3965e83528398cf8bb1f095
